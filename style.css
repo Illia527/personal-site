@@ -1,0 +1,132 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --border:#e5e7eb;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
+  --radius:16px;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body > *{
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr{
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 18px 0;
+}
+
+h1{
+  margin: 18px 0 10px;
+  font-size: 28px;
+}
+
+p{ color: var(--muted); }
+
+nav{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+}
+
+nav a{
+  display: inline-block;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 12px;
+  margin: 2px 2px;
+}
+
+nav a:hover{
+  background: rgba(37,99,235,.10);
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+ul li{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+ul li a{
+  color: var(--accent);
+  text-decoration: none;
+}
+
+ul li a:hover{ text-decoration: underline; }
+
+table{
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+th, td{
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th{
+  background: #f3f4f6;
+  font-weight: 700;
+}
+
+tr:last-child td{ border-bottom: none; }
+
+footer{
+  margin-top: 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  color: var(--muted);
+}
+
+footer a{
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover{ text-decoration: underline; }
+
+@media (max-width: 520px){
+  body{ padding: 14px; }
+  h1{ font-size: 22px; }
+  th, td{ padding: 8px; }
+}

@@ -130,3 +130,24 @@ footer a:hover{ text-decoration: underline; }
   h1{ font-size: 22px; }
   th, td{ padding: 8px; }
 }
+
+.profile{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 14px 0 6px;
+}
+
+.profile-photo{
+  width: 120px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 520px){
+  .profile{ flex-direction: column; align-items: flex-start; }
+  .profile-photo{ width: 140px; height: 180px; }
+}

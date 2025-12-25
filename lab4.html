@@ -6,10 +6,10 @@
   <title>Лабораторна №4 — Планер</title>
   <link rel="stylesheet" href="lab4.css" />
 </head>
-<body>
 
+<body>
   <main class="planner">
-    <!-- HEADER (як у шаблоні зверху) -->
+    <!-- HEADER -->
     <header class="planner__header">
       <div class="h-title">
         <div class="h-title__big">WEEKLY PLAN</div>
@@ -38,7 +38,7 @@
 
     <!-- BODY GRID -->
     <section class="planner__grid">
-      <!-- TO DO (ліва колонка на всю висоту) -->
+      <!-- TO DO -->
       <aside class="todo">
         <div class="todo__top">
           <div class="todo__label">TO DO</div>
@@ -51,10 +51,12 @@
             <input type="checkbox" />
             <input class="todo__line" type="text" />
           </label>
+
           <label class="todo__item">
             <input type="checkbox" />
             <input class="todo__line" type="text" />
           </label>
+
           <label class="todo__item">
             <input type="checkbox" />
             <input class="todo__line" type="text" />
@@ -110,7 +112,7 @@
         <textarea class="day__area"></textarea>
       </section>
 
-      <!-- Saturday + Sunday (неділя під суботою як у шаблоні) -->
+      <!-- Weekend -->
       <section class="weekend">
         <section class="day day--sat">
           <div class="day__head"><span>SATURDAY</span><input type="checkbox" /></div>
@@ -122,9 +124,7 @@
           <textarea class="day__area"></textarea>
         </section>
       </section>
-
     </section>
   </main>
-
 </body>
 </html>

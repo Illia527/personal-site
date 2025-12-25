@@ -9,6 +9,7 @@
 }
 
 *{ box-sizing:border-box; }
+
 body{
   margin:0;
   background:#fafafa;
@@ -17,11 +18,13 @@ body{
   padding:24px;
 }
 
+/* На вузьких екранах НЕ перебудовуємо сітку — даємо скрол */
 .planner{
   max-width:1200px;
   margin:0 auto;
   background:var(--bg);
   border:2px solid var(--border-strong);
+  overflow-x:auto;
 }
 
 /* HEADER */
@@ -32,6 +35,7 @@ body{
   align-items:end;
   padding:18px 18px 14px 18px;
   border-bottom:1px solid var(--border);
+  min-width: 980px; /* щоб не ламало як у шаблоні */
 }
 
 .h-title__big{
@@ -55,6 +59,7 @@ body{
   padding:6px 2px;
   font-size:14px;
   outline:none;
+  background:transparent;
 }
 
 .h-rocked{
@@ -78,7 +83,7 @@ body{
   accent-color:#111;
 }
 
-/* MAIN GRID (сітка як у шаблоні) */
+/* MAIN GRID — як у шаблоні */
 .planner__grid{
   display:grid;
   grid-template-columns: 280px repeat(3, 1fr);
@@ -87,6 +92,8 @@ body{
     "todo mon tue wed"
     "todo thu fri weekend";
   min-height:650px;
+
+  min-width: 980px; /* щоб сітка зберігалась */
 }
 
 .todo{ grid-area:todo; border-right:1px solid var(--border); padding:16px; }
@@ -109,9 +116,10 @@ body{
 }
 
 .day__head{
+  position:relative;
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center; /* назва по центру як у шаблоні */
   font-weight:800;
   letter-spacing:0.6px;
   font-size:14px;
@@ -119,6 +127,10 @@ body{
 }
 
 .day__head input{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
   width:16px;
   height:16px;
   accent-color:#111;
@@ -133,17 +145,18 @@ body{
   font:inherit;
   font-size:13px;
   line-height:1.5;
+  background:transparent;
 }
 
-/* WEEKEND split (Saturday + Sunday) */
+/* WEEKEND split */
 .weekend{
   display:grid;
-  grid-template-rows: 1fr 0.72fr; /* субота більша, неділя менша (як у шаблоні) */
+  grid-template-rows: 1fr 0.72fr; /* Sun менша */
 }
 
 .day--sat{ border-bottom:1px solid var(--border); }
 
-/* TODO styling */
+/* TODO */
 .todo__top{
   display:flex;
   justify-content:flex-start;
@@ -192,26 +205,9 @@ body{
   background:transparent;
 }
 
-/* Responsive (реагує на ширину, як вимагають) */
+/* Легка реакція на розмір екрану (без перебудови сітки) */
 @media (max-width: 980px){
-  .planner__header{
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .planner__grid{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "todo"
-      "mon"
-      "tue"
-      "wed"
-      "thu"
-      "fri"
-      "weekend";
-  }
-
-  .todo{ border-right:none; border-bottom:1px solid var(--border); }
-  .day, .weekend{ border-left:none; }
-  .weekend{ grid-template-rows: 1fr 1fr; }
+  body{ padding:12px; }
+  .planner__header{ gap:12px; }
+  .h-title__big{ font-size:30px; }
 }

@@ -1,217 +1,225 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap');
 
 :root{
-  --border:#d7d7d7;
-  --border-strong:#bdbdbd;
-  --text:#1a1a1a;
-  --muted:#6b6b6b;
-  --bg:#ffffff;
+  --bg:#f2f2f2;
+  --paper:#ffffff;
+  --border:#bdbdbd;
+  --text:#111;
+  --muted:#444;
+
+  --fontBody:"Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --fontTitle:"Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 }
 
 *{ box-sizing:border-box; }
+
 body{
   margin:0;
-  background:#fafafa;
-  font-family:"Montserrat", system-ui, -apple-system, Arial, sans-serif;
+  background:var(--bg);
   color:var(--text);
+  font-family:var(--fontBody);
   padding:24px;
 }
 
+.wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto; /* щоб при малому екрані не ламалась сітка */
+}
+
 .planner{
-  max-width:1200px;
-  margin:0 auto;
-  background:var(--bg);
-  border:2px solid var(--border-strong);
+  background:var(--paper);
+  border:2px solid var(--border);
+  min-width: 980px; /* “реакція” на розмір: буде горизонтальний скрол */
 }
 
 /* HEADER */
 .planner__header{
-  display:grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1.2fr 0.6fr;
-  gap:16px;
-  align-items:end;
-  padding:18px 18px 14px 18px;
-  border-bottom:1px solid var(--border);
+  border-bottom:2px solid var(--border);
+  padding:18px 18px 14px;
 }
 
-.h-title__big{
-  font-weight:800;
-  letter-spacing:0.5px;
-  font-size:34px;
+.title{
+  font-family:var(--fontTitle);
+  font-weight:700;
+  letter-spacing:.06em;
+  font-size:22px;
+  margin-bottom:10px;
 }
 
-.h-field__label{
-  font-size:12px;
-  letter-spacing:0.6px;
+.meta{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-width: 520px;
+}
+
+.meta__row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.meta__label{
+  font-family:var(--fontTitle);
   font-weight:600;
-  color:var(--muted);
-  margin-bottom:8px;
+  letter-spacing:.05em;
+  font-size:12px;
+  color:var(--text);
+  min-width: 190px;
 }
 
-.h-field__input{
-  width:100%;
-  border:none;
-  border-bottom:2px solid var(--border-strong);
-  padding:6px 2px;
-  font-size:14px;
+.meta__fill{
+  flex:1;
+  min-height: 18px;
+  border-bottom:1px solid var(--border);
   outline:none;
 }
 
-.h-rocked{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:10px;
-  user-select:none;
+.meta__row--rocked{
+  justify-content:space-between;
+  max-width: 340px;
 }
 
-.h-rocked__label{
-  font-size:12px;
-  letter-spacing:0.6px;
-  font-weight:600;
-  color:var(--muted);
-}
-
-.h-rocked__check{
-  width:18px;
-  height:18px;
-  accent-color:#111;
-}
-
-/* MAIN GRID (сітка як у шаблоні) */
-.planner__grid{
+/* GRID BODY */
+.grid{
   display:grid;
-  grid-template-columns: 280px repeat(3, 1fr);
+  grid-template-columns: 1.25fr 0.85fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "todo mon tue wed"
-    "todo thu fri weekend";
-  min-height:650px;
+  min-height: 760px;
 }
 
-.todo{ grid-area:todo; border-right:1px solid var(--border); padding:16px; }
-.day--mon{ grid-area:mon; }
-.day--tue{ grid-area:tue; }
-.day--wed{ grid-area:wed; }
-.day--thu{ grid-area:thu; }
-.day--fri{ grid-area:fri; }
-.weekend{ grid-area:weekend; }
-
-.day, .weekend{
-  border-left:1px solid var(--border);
+.cell{
+  border-right:1px solid var(--border);
   border-bottom:1px solid var(--border);
+  padding:14px 12px;
 }
 
+.grid > :nth-child(3),
+.grid > :nth-child(4),
+.grid > :nth-child(5){ /* top row day cells already ok */ }
+
+.left{
+  grid-column:1;
+  grid-row:1 / span 2;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.todo{
+  grid-column:2;
+  grid-row:1 / span 2;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.mon{ grid-column:3; grid-row:1; }
+.tue{ grid-column:4; grid-row:1; }
+.wed{ grid-column:5; grid-row:1; border-right:none; }  /* край праворуч */
+
+.thu{ grid-column:3; grid-row:2; }
+.fri{ grid-column:4; grid-row:2; }
+.satSun{ grid-column:5; grid-row:2; padding:0; border-right:none; } /* край праворуч */
+
+/* Titles inside blocks */
+.block__title,
+.day__head{
+  font-family:var(--fontTitle);
+  font-weight:700;
+  letter-spacing:.06em;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+/* Checklines (checkbox + editable line) */
+.checkline{
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+}
+
+.line{
+  flex:1;
+  min-height: 18px;
+  border-bottom:1px solid var(--border);
+  outline:none;
+}
+
+/* Day cells */
 .day{
-  padding:14px 14px 10px 14px;
+  position:relative;
   display:flex;
   flex-direction:column;
 }
 
-.day__head{
+.day__cb{
+  position:absolute;
+  top:12px;
+  right:12px;
+}
+
+.day__lines{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-weight:800;
-  letter-spacing:0.6px;
-  font-size:14px;
-  margin-bottom:10px;
-}
-
-.day__head input{
-  width:16px;
-  height:16px;
-  accent-color:#111;
-}
-
-.day__area{
-  flex:1;
-  width:100%;
-  border:none;
-  outline:none;
-  resize:none;
-  font:inherit;
-  font-size:13px;
-  line-height:1.5;
-}
-
-/* WEEKEND split (Saturday + Sunday) */
-.weekend{
-  display:grid;
-  grid-template-rows: 1fr 0.72fr; /* субота більша, неділя менша (як у шаблоні) */
-}
-
-.day--sat{ border-bottom:1px solid var(--border); }
-
-/* TODO styling */
-.todo__top{
-  display:flex;
-  justify-content:flex-start;
-  margin-bottom:10px;
-}
-
-.todo__label{
-  font-weight:800;
-  letter-spacing:0.6px;
-}
-
-.todo__section{
-  border-top:1px solid var(--border);
-  padding-top:12px;
-  margin-top:12px;
-}
-
-.todo__head{
-  font-size:12px;
-  letter-spacing:0.6px;
-  font-weight:800;
-  color:var(--muted);
-  margin-bottom:10px;
-}
-
-.todo__item{
-  display:flex;
-  align-items:center;
+  flex-direction:column;
   gap:10px;
-  margin:8px 0;
 }
 
-.todo__item input[type="checkbox"]{
+.wline{
+  min-height: 18px;
+  border-bottom:1px solid var(--border);
+  outline:none;
+}
+
+/* SAT+SUN nested grid */
+.satSun__grid{
+  height:100%;
+  display:grid;
+  grid-template-rows: 1.15fr 0.85fr; /* Saturday bigger than Sunday like template */
+}
+
+.day--inner{
+  padding:14px 12px;
+}
+
+.sat{
+  border-bottom:1px solid var(--border);
+}
+
+/* CHECKBOX style (simple square like template) */
+.cb{
+  appearance:none;
+  width:14px;
+  height:14px;
+  border:1px solid #222;
+  border-radius:2px;
+  background:transparent;
+  cursor:pointer;
+  position:relative;
+  flex:0 0 auto;
+}
+
+.cb--big{
   width:16px;
   height:16px;
-  accent-color:#111;
 }
 
-.todo__line{
-  flex:1;
-  border:none;
-  border-bottom:1px solid var(--border-strong);
-  padding:4px 2px;
-  font-size:13px;
-  outline:none;
-  background:transparent;
+.cb:checked::after{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:1px;
+  width:5px;
+  height:9px;
+  border:2px solid #111;
+  border-top:0;
+  border-left:0;
+  transform:rotate(45deg);
 }
 
-/* Responsive (реагує на ширину, як вимагають) */
-@media (max-width: 980px){
-  .planner__header{
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .planner__grid{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "todo"
-      "mon"
-      "tue"
-      "wed"
-      "thu"
-      "fri"
-      "weekend";
-  }
-
-  .todo{ border-right:none; border-bottom:1px solid var(--border); }
-  .day, .weekend{ border-left:none; }
-  .weekend{ grid-template-rows: 1fr 1fr; }
+/* Small responsiveness (without full adaptive) */
+@media (max-width: 1100px){
+  .grid{ min-height: 700px; }
+  .meta{ max-width: 100%; }
 }

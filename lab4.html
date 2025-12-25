@@ -3,128 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Лабораторна №4 — Планер</title>
+  <title>Lab 4 — Weekly Planner</title>
   <link rel="stylesheet" href="lab4.css" />
 </head>
 <body>
 
-  <main class="planner">
-    <!-- HEADER (як у шаблоні зверху) -->
-    <header class="planner__header">
-      <div class="h-title">
-        <div class="h-title__big">WEEKLY PLAN</div>
-      </div>
+  <div class="wrap">
+    <main class="planner">
 
-      <div class="h-field">
-        <div class="h-field__label">WEEK OF</div>
-        <input class="h-field__input" type="text" placeholder="__/__/____" />
-      </div>
+      <!-- HEADER -->
+      <header class="planner__header">
+        <div class="header__left">
+          <div class="title">WEEKLY PLAN</div>
 
-      <div class="h-field">
-        <div class="h-field__label">HEALTHY HABIT</div>
-        <input class="h-field__input" type="text" placeholder="напр. 8 000 кроків" />
-      </div>
+          <div class="meta">
+            <div class="meta__row">
+              <div class="meta__label">WEEK OF</div>
+              <div class="meta__fill" contenteditable="true" aria-label="Week of"></div>
+            </div>
 
-      <div class="h-field">
-        <div class="h-field__label">ROOM FOR IMPROVEMENT</div>
-        <input class="h-field__input" type="text" placeholder="що покращити" />
-      </div>
+            <div class="meta__row">
+              <div class="meta__label">HEALTHY HABIT</div>
+              <div class="meta__fill" contenteditable="true" aria-label="Healthy habit"></div>
+            </div>
 
-      <label class="h-rocked">
-        <span class="h-rocked__label">ROCKED IT</span>
-        <input class="h-rocked__check" type="checkbox" />
-      </label>
-    </header>
+            <div class="meta__row">
+              <div class="meta__label">ROOM FOR IMPROVEMENT</div>
+              <div class="meta__fill" contenteditable="true" aria-label="Room for improvement"></div>
+            </div>
 
-    <!-- BODY GRID -->
-    <section class="planner__grid">
-      <!-- TO DO (ліва колонка на всю висоту) -->
-      <aside class="todo">
-        <div class="todo__top">
-          <div class="todo__label">TO DO</div>
+            <div class="meta__row meta__row--rocked">
+              <div class="meta__label">ROCKED IT</div>
+              <input class="cb cb--big" type="checkbox" aria-label="Rocked it" />
+            </div>
+          </div>
         </div>
+      </header>
 
-        <div class="todo__section">
-          <div class="todo__head">TOP 3 GOALS</div>
+      <!-- BODY GRID -->
+      <section class="grid">
 
-          <label class="todo__item">
-            <input type="checkbox" />
-            <input class="todo__line" type="text" />
-          </label>
-          <label class="todo__item">
-            <input type="checkbox" />
-            <input class="todo__line" type="text" />
-          </label>
-          <label class="todo__item">
-            <input type="checkbox" />
-            <input class="todo__line" type="text" />
-          </label>
-        </div>
+        <!-- LEFT BIG COLUMN -->
+        <aside class="cell left">
+          <section class="block">
+            <div class="block__title">TOP 3 GOALS</div>
 
-        <div class="todo__section">
-          <div class="todo__head">EVERYTHING ELSE</div>
+            <div class="checkline">
+              <input class="cb" type="checkbox" />
+              <div class="line" contenteditable="true"></div>
+            </div>
+            <div class="checkline">
+              <input class="cb" type="checkbox" />
+              <div class="line" contenteditable="true"></div>
+            </div>
+            <div class="checkline">
+              <input class="cb" type="checkbox" />
+              <div class="line" contenteditable="true"></div>
+            </div>
+          </section>
 
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-        </div>
+          <section class="block">
+            <div class="block__title">EVERYTHING ELSE</div>
 
-        <div class="todo__section todo__section--last">
-          <div class="todo__head">NEXT WEEK</div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          </section>
 
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-        </div>
-      </aside>
+          <section class="block block--last">
+            <div class="block__title">NEXT WEEK</div>
 
-      <!-- DAYS -->
-      <section class="day day--mon">
-        <div class="day__head"><span>MONDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
-      </section>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+            <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          </section>
+        </aside>
 
-      <section class="day day--tue">
-        <div class="day__head"><span>TUESDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
-      </section>
+        <!-- TO DO COLUMN -->
+        <aside class="cell todo">
+          <div class="block__title">TO DO</div>
 
-      <section class="day day--wed">
-        <div class="day__head"><span>WEDNESDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
-      </section>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+          <div class="checkline"><input class="cb" type="checkbox" /><div class="line" contenteditable="true"></div></div>
+        </aside>
 
-      <section class="day day--thu">
-        <div class="day__head"><span>THURSDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
-      </section>
-
-      <section class="day day--fri">
-        <div class="day__head"><span>FRIDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
-      </section>
-
-      <!-- Saturday + Sunday (неділя під суботою як у шаблоні) -->
-      <section class="weekend">
-        <section class="day day--sat">
-          <div class="day__head"><span>SATURDAY</span><input type="checkbox" /></div>
-          <textarea class="day__area"></textarea>
+        <!-- DAYS TOP ROW -->
+        <section class="cell day mon">
+          <div class="day__head">MONDAY</div>
+          <input class="cb day__cb" type="checkbox" aria-label="Monday checkbox" />
+          <div class="day__lines">
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+          </div>
         </section>
 
-        <section class="day day--sun">
-          <div class="day__head"><span>SUNDAY</span><input type="checkbox" /></div>
-          <textarea class="day__area"></textarea>
+        <section class="cell day tue">
+          <div class="day__head">TUESDAY</div>
+          <input class="cb day__cb" type="checkbox" aria-label="Tuesday checkbox" />
+          <div class="day__lines">
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+          </div>
         </section>
-      </section>
 
-    </section>
-  </main>
+        <section class="cell day wed">
+          <div class="day__head">WEDNESDAY</div>
+          <input class="cb day__cb" type="checkbox" aria-label="Wednesday checkbox" />
+          <div class="day__lines">
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+          </div>
+        </section>
+
+        <!-- DAYS BOTTOM ROW -->
+        <section class="cell day thu">
+          <div class="day__head">THURSDAY</div>
+          <input class="cb day__cb" type="checkbox" aria-label="Thursday checkbox" />
+          <div class="day__lines">
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+          </div>
+        </section>
+
+        <section class="cell day fri">
+          <div class="day__head">FRIDAY</div>
+          <input class="cb day__cb" type="checkbox" aria-label="Friday checkbox" />
+          <div class="day__lines">
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+            <div class="wline" contenteditable="true"></div>
+          </div>
+        </section>
+
+        <!-- SAT + SUN (nested like template) -->
+        <section class="cell satSun">
+          <div class="satSun__grid">
+            <div class="day day--inner sat">
+              <div class="day__head">SATURDAY</div>
+              <input class="cb day__cb" type="checkbox" aria-label="Saturday checkbox" />
+              <div class="day__lines">
+                <div class="wline" contenteditable="true"></div>
+                <div class="wline" contenteditable="true"></div>
+                <div class="wline" contenteditable="true"></div>
+              </div>
+            </div>
+
+            <div class="day day--inner sun">
+              <div class="day__head">SUNDAY</div>
+              <input class="cb day__cb" type="checkbox" aria-label="Sunday checkbox" />
+              <div class="day__lines">
+                <div class="wline" contenteditable="true"></div>
+                <div class="wline" contenteditable="true"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </main>
+  </div>
 
 </body>
 </html>

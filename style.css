@@ -151,3 +151,31 @@ footer a:hover{ text-decoration: underline; }
   .profile{ flex-direction: column; align-items: flex-start; }
   .profile-photo{ width: 140px; height: 180px; }
 }
+/* Практична №2 — стилізація форми */
+.reg-form{
+  max-width: 520px;
+  margin: 18px auto;         /* позиціонування */
+  padding: 18px;
+  background: #fff;          /* фон */
+  color: #1f2937;            /* текст */
+  border-radius: 16px;       /* закруглення */
+  box-shadow: 0 10px 24px rgba(0,0,0,.12); /* тінь */
+  border: 1px solid #e5e7eb;
+}
+
+.reg-form input,
+.reg-form select{
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+}
+
+.reg-form input[type="submit"]{
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}

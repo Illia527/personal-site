@@ -6,177 +6,167 @@
   <title>Лабораторна робота №3 — Flexbox YouTube</title>
   <link rel="stylesheet" href="lab3.css" />
 </head>
-<body>
 
+<body>
   <!-- TOP BAR -->
   <header class="topbar">
-    <div class="topbar__left">
-      <button class="icon-btn" aria-label="Меню">
-        <!-- burger -->
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
+    <button class="icon-btn" aria-label="Меню">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+    </button>
 
-      <div class="brand" aria-label="YouTube Premium UA">
-        <!-- youtube icon -->
-        <svg class="brand__yt" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="#FF0000" d="M21.7 8.2a3 3 0 0 0-2.1-2.1C17.8 5.6 12 5.6 12 5.6s-5.8 0-7.6.5A3 3 0 0 0 2.3 8.2 31 31 0 0 0 1.8 12c0 1.3.2 2.6.5 3.8a3 3 0 0 0 2.1 2.1c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a3 3 0 0 0 2.1-2.1c.3-1.2.5-2.5.5-3.8s-.2-2.6-.5-3.8Z"/>
-          <path fill="#fff" d="M10 15.2V8.8L15.6 12 10 15.2Z"/>
+    <a class="brand" href="#">
+      <span class="yt-logo" aria-hidden="true">
+        <svg viewBox="0 0 28 20">
+          <path d="M27.4 3.1a3.4 3.4 0 0 0-2.4-2.4C22.9 0 14 0 14 0S5.1 0 3 .7A3.4 3.4 0 0 0 .6 3.1 35.3 35.3 0 0 0 0 10a35.3 35.3 0 0 0 .6 6.9A3.4 3.4 0 0 0 3 19.3c2.1.7 11 .7 11 .7s8.9 0 11-.7a3.4 3.4 0 0 0 2.4-2.4A35.3 35.3 0 0 0 28 10a35.3 35.3 0 0 0-.6-6.9z" fill="#ff0000"/>
+          <path d="M11.2 14.3V5.7L18.5 10l-7.3 4.3z" fill="#fff"/>
         </svg>
+      </span>
+      <span class="brand-text">Premium</span>
+      <span class="brand-locale">UA</span>
+    </a>
 
-        <span class="brand__name">YouTube</span>
-        <span class="brand__premium">Premium</span>
-        <span class="brand__country">UA</span>
+    <div class="search">
+      <div class="search-box">
+        <input type="text" placeholder="Пошук" />
       </div>
-    </div>
-
-    <div class="topbar__center">
-      <div class="search">
-        <input class="search__input" type="text" placeholder="Пошук" />
-        <button class="search__btn" aria-label="Пошук">
-          <!-- search -->
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path d="M16.5 16.5 21 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-
-      <button class="icon-btn" aria-label="Голосовий пошук">
-        <!-- mic -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M19 11a7 7 0 0 1-14 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M12 18v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+      <button class="search-btn" aria-label="Пошук">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 105.3 14l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
       </button>
     </div>
 
-    <div class="topbar__right">
-      <button class="icon-btn" aria-label="Додатки">
-        <!-- grid -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M5 5h4v4H5V5Zm5 0h4v4h-4V5Zm5 0h4v4h-4V5ZM5 10h4v4H5v-4Zm5 0h4v4h-4v-4Zm5 0h4v4h-4v-4ZM5 15h4v4H5v-4Zm5 0h4v4h-4v-4Zm5 0h4v4h-4v-4Z" />
-        </svg>
+    <button class="icon-btn mic" aria-label="Голосовий пошук">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 003-3V6a3 3 0 00-6 0v5a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.9V21h2v-3.1A7 7 0 0019 11h-2z"/></svg>
+    </button>
+
+    <div class="top-actions">
+      <button class="icon-btn" aria-label="Створити">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7h-4V3h-2v4H9v2h4v4h2V9h4V7zM4 6h8V4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2v-8h-2v8H4V6z"/></svg>
       </button>
 
       <button class="icon-btn" aria-label="Сповіщення">
-        <!-- bell -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 22a2.2 2.2 0 0 0 2.2-2.2h-4.4A2.2 2.2 0 0 0 12 22Z"/>
-          <path d="M18 16V11a6 6 0 1 0-12 0v5L4 18v1h16v-1l-2-2Z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2.5 2.5 0 002.45-2h-4.9A2.5 2.5 0 0012 22zm6-6V11a6 6 0 00-5-5.9V4a1 1 0 00-2 0v1.1A6 6 0 006 11v5l-2 2v1h16v-1l-2-2z"/></svg>
       </button>
 
-      <div class="user" aria-label="Профіль">I</div>
+      <div class="user-avatar" title="Профіль">I</div>
     </div>
   </header>
 
+  <!-- LAYOUT -->
   <div class="layout">
     <!-- SIDEBAR -->
     <aside class="sidebar">
-      <nav class="side-nav">
-        <a class="side-link active" href="#">
-          <span class="side-ic">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 10v11h6v-7h6v7h6V10l-9-7Z"/></svg>
+      <nav class="nav-block">
+        <a class="nav-item active" href="#">
+          <span class="nav-ic">
+            <svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3l9-8z"/></svg>
           </span>
           <span>Головна</span>
         </a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 3h10v18H7z" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M10 8l6 4-6 4V8z"/>
-            </svg>
+        <a class="nav-item" href="#">
+          <span class="nav-ic">
+            <svg viewBox="0 0 24 24"><path d="M7 4h10v16H7V4zm2 2v12h6V6H9z"/></svg>
           </span>
           <span>YouTube Shorts</span>
         </a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 8l9-5 9 5v10l-9 5-9-5V8z" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M10 9l6 3-6 3V9z"/>
-            </svg>
+        <a class="nav-item" href="#">
+          <span class="nav-ic">
+            <svg viewBox="0 0 24 24"><path d="M10 18V6l10 6-10 6zM4 6h4v12H4V6z"/></svg>
           </span>
           <span>Підписки</span>
         </a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 18V6l12-2v16l-12 2Z"/>
-              <path d="M3 6h6v12H3z"/>
-            </svg>
+        <a class="nav-item" href="#">
+          <span class="nav-ic">
+            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm-1 5h2v7h-2V8zm0 9h2v2h-2v-2z"/></svg>
           </span>
           <span>YouTube Music</span>
         </a>
       </nav>
 
-      <div class="side-divider"></div>
+      <hr class="sep" />
 
-      <div class="side-title">
+      <div class="nav-title">
         <span>Ви</span>
         <span class="chev">›</span>
       </div>
 
-      <nav class="side-nav">
-        <a class="side-link" href="#">
-          <span class="side-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.4 0-8 2-8 4.5V21h16v-2.5C20 16 16.4 14 12 14Z"/></svg></span>
-          <span>Ваш канал</span>
-        </a>
+      <nav class="nav-block">
+        <a class="nav-item" href="#"><span class="nav-ic">
+          <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></svg>
+        </span><span>Ваш канал</span></a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4l-6 6 6 6v-4c3.3 0 6 2.7 6 6h2c0-4.4-3.6-8-8-8Z"/></svg></span>
-          <span>Історія</span>
-        </a>
+        <a class="nav-item" href="#"><span class="nav-ic">
+          <svg viewBox="0 0 24 24"><path d="M12 8a1 1 0 011 1v3.6l2.6 1.5-1 1.7-3.6-2.1V9a1 1 0 011-1zm0-6a10 10 0 100 20 10 10 0 000-20zm0 2a8 8 0 110 16 8 8 0 010-16z"/></svg>
+        </span><span>Історія</span></a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M10 9l6 3-6 3z" fill="#fff"/></svg></span>
-          <span>Ваші відео</span>
-        </a>
+        <a class="nav-item" href="#"><span class="nav-ic">
+          <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5zm2 2v10h14V7H5zm4 1l7 4-7 4V8z"/></svg>
+        </span><span>Ваші відео</span></a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0-6a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
-          <span>Переглянути пізніше</span>
-        </a>
+        <a class="nav-item" href="#"><span class="nav-ic">
+          <svg viewBox="0 0 24 24"><path d="M12 7a1 1 0 011 1v4.6l3.2 2.1-1.1 1.7L11 14V8a1 1 0 011-1zM12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+        </span><span>Переглянути пізніше</span></a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-          <span>Завантаження</span>
-        </a>
+        <a class="nav-item" href="#"><span class="nav-ic">
+          <svg viewBox="0 0 24 24"><path d="M12 2l4 4h-3v8h-2V6H8l4-4zm-7 16h14v2H5v-2z"/></svg>
+        </span><span>Завантаження</span></a>
 
-        <a class="side-link" href="#">
-          <span class="side-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-          <span>Показати більше</span>
-        </a>
+        <a class="nav-item" href="#"><span class="nav-ic">
+          <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>
+        </span><span>Показати більше</span></a>
       </nav>
 
-      <div class="side-divider"></div>
+      <hr class="sep" />
 
-      <div class="side-title">Підписки</div>
+      <div class="nav-title plain">Підписки</div>
 
-      <div class="subs">
-        <a class="sub-link" href="#"><span class="sub-dot d1"></span><span>WAS: Популярн...</span></a>
-        <a class="sub-link" href="#"><span class="sub-dot d2"></span><span>TheDRZ</span></a>
-        <a class="sub-link" href="#"><span class="sub-dot d3"></span><span>ROZETKA</span></a>
-        <a class="sub-link" href="#"><span class="sub-dot d4"></span><span>ROZETKA GAME...</span></a>
-        <a class="sub-link" href="#"><span class="sub-dot d5"></span><span>Хащі</span></a>
-
-        <a class="side-link" href="#">
-          <span class="side-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-          <span>Показати ще</span>
+      <nav class="subs">
+        <a class="sub-item" href="#">
+          <img class="sub-ava" src="https://i.pravatar.cc/28?img=11" alt="">
+          <span class="sub-name">WAS: Популярн...</span>
+          <span class="sub-dot" aria-hidden="true"></span>
         </a>
 
-        <div class="subs-count">Показати ще 24</div>
-      </div>
+        <a class="sub-item" href="#">
+          <img class="sub-ava" src="https://i.pravatar.cc/28?img=22" alt="">
+          <span class="sub-name">TheDRZ</span>
+          <span class="sub-dot" aria-hidden="true"></span>
+        </a>
+
+        <a class="sub-item" href="#">
+          <img class="sub-ava" src="https://i.pravatar.cc/28?img=33" alt="">
+          <span class="sub-name">ROZETKA</span>
+          <span class="sub-dot" aria-hidden="true"></span>
+        </a>
+
+        <a class="sub-item" href="#">
+          <img class="sub-ava" src="https://i.pravatar.cc/28?img=44" alt="">
+          <span class="sub-name">Алексей Макар...</span>
+          <span class="sub-dot" aria-hidden="true"></span>
+        </a>
+
+        <a class="sub-item" href="#">
+          <img class="sub-ava" src="https://i.pravatar.cc/28?img=55" alt="">
+          <span class="sub-name">ROZETKA GAME...</span>
+          <span class="sub-dot" aria-hidden="true"></span>
+        </a>
+
+        <a class="sub-item show-more" href="#">
+          <span class="nav-ic small">
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>
+          </span>
+          <span class="sub-name">Показати ще 24</span>
+        </a>
+      </nav>
     </aside>
 
-    <!-- FEED -->
+    <!-- CONTENT -->
     <main class="feed">
       <!-- CHIPS -->
-      <div class="chips-row">
-        <button class="chip chip--active">Усі</button>
+      <div class="chips">
+        <button class="chip active">Усі</button>
         <button class="chip">Ігри</button>
         <button class="chip">Музика</button>
         <button class="chip">Пряма трансляція</button>
@@ -186,146 +176,134 @@
         <button class="chip">Мультфільми</button>
         <button class="chip">Нещодавні завантаження</button>
         <button class="chip">Ви дивилися</button>
-        <button class="chip-arrow" aria-label="Далі">›</button>
+        <button class="chip arrow">›</button>
       </div>
 
-      <!-- VIDEOS GRID -->
-      <section class="videos">
-        <!-- 1 -->
+      <!-- VIDEO GRID (Flexbox) -->
+      <section class="grid">
         <article class="card">
-          <div class="thumb t1"><span class="time">12:30</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua1/640/360" alt="Прев’ю">
+            <span class="dur">12:30</span>
+          </div>
           <div class="meta">
-            <div class="avatar">E</div>
-            <div class="info">
-              <div class="title">Як збільшився борг України (пояснення простими словами)</div>
-              <div class="sub">Економічна правда</div>
-              <div class="sub">78 тис. переглядів • 1 місяць тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=61" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Як збільшився борг України (пояснення простими словами)</h3>
+              <div class="chname">Економічна правда</div>
+              <div class="vinfo">78 тис. переглядів • 1 місяць тому</div>
             </div>
           </div>
         </article>
 
-        <!-- 2 -->
         <article class="card">
-          <div class="thumb t2"><span class="time">32:08</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua2/640/360" alt="Прев’ю">
+            <span class="dur">32:08</span>
+          </div>
           <div class="meta">
-            <div class="avatar">L</div>
-            <div class="info">
-              <div class="title">Що бісить журналістку: реальні кейси</div>
-              <div class="sub">LUKI</div>
-              <div class="sub">70 тис. переглядів • 4 місяці тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=62" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Що бісить журналістику: реальні кейси</h3>
+              <div class="chname">LUKI</div>
+              <div class="vinfo">70 тис. переглядів • 4 місяці тому</div>
             </div>
           </div>
         </article>
 
-        <!-- 3 -->
         <article class="card">
-          <div class="thumb t3"><span class="time">4:46</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua3/640/360" alt="Прев’ю">
+            <span class="dur">4:46</span>
+          </div>
           <div class="meta">
-            <div class="avatar">R</div>
-            <div class="info">
-              <div class="title">Огляд подій тижня: коротко та по суті</div>
-              <div class="sub">RTVI (приклад)</div>
-              <div class="sub">276 тис. переглядів • 11 місяців тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=63" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Огляд подій тижня: коротко та по суті</h3>
+              <div class="chname">RTVI (приклад)</div>
+              <div class="vinfo">276 тис. переглядів • 11 місяців тому</div>
             </div>
           </div>
         </article>
 
-        <!-- 4 -->
         <article class="card">
-          <div class="thumb t4"><span class="time">23:59</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua4/640/360" alt="Прев’ю">
+            <span class="dur">23:59</span>
+          </div>
           <div class="meta">
-            <div class="avatar">H</div>
-            <div class="info">
-              <div class="title">Як навести порядок у справах за 10 хвилин</div>
-              <div class="sub">How to ADHD (приклад)</div>
-              <div class="sub">1,2 млн переглядів • 7 років тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=64" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Як навести порядок у справах за 10 хвилин</h3>
+              <div class="chname">How to ADHD (приклад)</div>
+              <div class="vinfo">1,2 млн переглядів • 7 років тому</div>
             </div>
           </div>
         </article>
 
-        <!-- 5 -->
         <article class="card">
-          <div class="thumb t5"><span class="time">30:18</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua5/640/360" alt="Прев’ю">
+            <span class="dur">30:18</span>
+          </div>
           <div class="meta">
-            <div class="avatar">B</div>
-            <div class="info">
-              <div class="title">Відео-розбір: що видно на записі</div>
-              <div class="sub">BINUS INFO</div>
-              <div class="sub">90 тис. переглядів • 1 день тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=65" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Відео-розбір: що видно на записі</h3>
+              <div class="chname">BINUS INFO</div>
+              <div class="vinfo">90 тис. переглядів • 1 день тому</div>
             </div>
           </div>
         </article>
 
-        <!-- 6 -->
         <article class="card">
-          <div class="thumb t6"><span class="time">2:03</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua6/640/360" alt="Прев’ю">
+            <span class="dur">2:03</span>
+          </div>
           <div class="meta">
-            <div class="avatar">H</div>
-            <div class="info">
-              <div class="title">Neo-Brutalism: тренд у дизайні (приклад)</div>
-              <div class="sub">Halo Lab</div>
-              <div class="sub">242 тис. переглядів • 1 день тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=66" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Neo-Brutalism: тренд у дизайні (приклад)</h3>
+              <div class="chname">Halo Lab</div>
+              <div class="vinfo">242 тис. переглядів • 1 день тому</div>
             </div>
           </div>
         </article>
 
-        <!-- 7 -->
         <article class="card">
-          <div class="thumb t7"><span class="time">20:19</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua7/640/360" alt="Прев’ю">
+            <span class="dur">20:19</span>
+          </div>
           <div class="meta">
-            <div class="avatar">L</div>
-            <div class="info">
-              <div class="title">Пресконференція: головні заяви (приклад)</div>
-              <div class="sub">Les Podervianskyi</div>
-              <div class="sub">434 тис. переглядів • 5 років тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=67" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Пресконференція: головні заяви (приклад)</h3>
+              <div class="chname">Les Podervianskyi</div>
+              <div class="vinfo">434 тис. переглядів • 5 років тому</div>
             </div>
           </div>
         </article>
 
-        <!-- 8 -->
         <article class="card">
-          <div class="thumb t8"><span class="time">1:18</span></div>
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ytua8/640/360" alt="Прев’ю">
+            <span class="dur">1:18</span>
+          </div>
           <div class="meta">
-            <div class="avatar">P</div>
-            <div class="info">
-              <div class="title">Секрети малювання портретів: міні-урок</div>
-              <div class="sub">Pencil Tutorial</div>
-              <div class="sub">1,3 млн переглядів • 3 місяці тому</div>
+            <img class="ch-ava" src="https://i.pravatar.cc/36?img=68" alt="">
+            <div class="mtext">
+              <h3 class="vtitle">Секрети малювання портретів: міні-урок</h3>
+              <div class="chname">Pencil Tutorial</div>
+              <div class="vinfo">1,3 млн переглядів • 3 місяці тому</div>
             </div>
           </div>
         </article>
       </section>
 
-      <!-- SHORTS -->
-      <section class="shorts">
-        <div class="shorts__head">
-          <div class="shorts__label">
-            <span class="shorts__dot"></span>
-            <span>YouTube Shorts</span>
-          </div>
-          <button class="shorts__close" aria-label="Закрити">×</button>
-        </div>
-
-        <div class="shorts__row">
-          <div class="short">
-            <div class="short__thumb s1"></div>
-          </div>
-          <div class="short">
-            <div class="short__thumb s2"></div>
-          </div>
-          <div class="short">
-            <div class="short__thumb s3"></div>
-          </div>
-          <div class="short">
-            <div class="short__thumb s4"></div>
-          </div>
-          <div class="short">
-            <div class="short__thumb s5"></div>
-          </div>
-        </div>
-      </section>
+      <!-- ВАЖЛИВО: нижній блок YouTube Shorts (як у прикладі) ТИ ПРОСИВ ВИДАЛИТИ — тому його тут НЕМАЄ -->
     </main>
   </div>
-
 </body>
 </html>

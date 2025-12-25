@@ -2,125 +2,180 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Лабораторна №4 — Планер</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab 4 — Weekly Planner</title>
   <link rel="stylesheet" href="lab4.css" />
 </head>
 <body>
 
   <main class="planner">
-    <!-- HEADER (як у шаблоні зверху) -->
-    <header class="planner__header">
-      <div class="h-title">
-        <div class="h-title__big">WEEKLY PLAN</div>
+
+    <!-- TOP BAR (йде по тій самій сітці, що і все інше) -->
+    <section class="topbar">
+      <div class="topbar__title">WEEKLY PLAN</div>
+
+      <div class="topbar__field">
+        <div class="label">WEEK OF</div>
+        <div class="line"></div>
       </div>
 
-      <div class="h-field">
-        <div class="h-field__label">WEEK OF</div>
-        <input class="h-field__input" type="text" placeholder="__/__/____" />
+      <div class="topbar__field">
+        <div class="label">HEALTHY HABIT</div>
+        <div class="line"></div>
       </div>
 
-      <div class="h-field">
-        <div class="h-field__label">HEALTHY HABIT</div>
-        <input class="h-field__input" type="text" placeholder="напр. 8 000 кроків" />
+      <div class="topbar__field">
+        <div class="label">ROOM FOR IMPROVEMENT</div>
+        <div class="line"></div>
       </div>
 
-      <div class="h-field">
-        <div class="h-field__label">ROOM FOR IMPROVEMENT</div>
-        <input class="h-field__input" type="text" placeholder="що покращити" />
-      </div>
-
-      <label class="h-rocked">
-        <span class="h-rocked__label">ROCKED IT</span>
-        <input class="h-rocked__check" type="checkbox" />
+      <label class="topbar__rocked">
+        <span>ROCKED IT</span>
+        <input type="checkbox" />
+        <span class="check"></span>
       </label>
-    </header>
+    </section>
 
-    <!-- BODY GRID -->
-    <section class="planner__grid">
-      <!-- TO DO (ліва колонка на всю висоту) -->
-      <aside class="todo">
-        <div class="todo__top">
-          <div class="todo__label">TO DO</div>
+    <!-- MAIN GRID -->
+    <section class="grid">
+
+      <!-- LEFT COLUMN (spans 2 rows) -->
+      <aside class="cell leftcol">
+        <div class="block">
+          <div class="block__head">TOP 3 GOALS</div>
+          <ul class="checklist">
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+          </ul>
         </div>
 
-        <div class="todo__section">
-          <div class="todo__head">TOP 3 GOALS</div>
-
-          <label class="todo__item">
-            <input type="checkbox" />
-            <input class="todo__line" type="text" />
-          </label>
-          <label class="todo__item">
-            <input type="checkbox" />
-            <input class="todo__line" type="text" />
-          </label>
-          <label class="todo__item">
-            <input type="checkbox" />
-            <input class="todo__line" type="text" />
-          </label>
+        <div class="block">
+          <div class="block__head">EVERYTHING ELSE</div>
+          <ul class="checklist">
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+          </ul>
         </div>
 
-        <div class="todo__section">
-          <div class="todo__head">EVERYTHING ELSE</div>
-
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-        </div>
-
-        <div class="todo__section todo__section--last">
-          <div class="todo__head">NEXT WEEK</div>
-
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
-          <label class="todo__item"><input type="checkbox" /><input class="todo__line" type="text" /></label>
+        <div class="block nextweek">
+          <div class="block__head">NEXT WEEK</div>
+          <ul class="checklist">
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+            <li><span class="box"></span><span class="rule"></span></li>
+          </ul>
         </div>
       </aside>
 
-      <!-- DAYS -->
-      <section class="day day--mon">
-        <div class="day__head"><span>MONDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
+      <!-- TODO (spans 2 rows) -->
+      <section class="cell todo">
+        <div class="cell__head">
+          <div class="cell__title">TO DO</div>
+          <div class="corner"></div>
+        </div>
+
+        <ul class="checklist checklist--tall">
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+          <li><span class="box"></span><span class="rule"></span></li>
+        </ul>
       </section>
 
-      <section class="day day--tue">
-        <div class="day__head"><span>TUESDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
+      <!-- DAYS TOP ROW -->
+      <section class="cell day mon">
+        <div class="cell__head">
+          <div class="cell__title">MONDAY</div>
+          <label class="mini-check">
+            <input type="checkbox" />
+            <span></span>
+          </label>
+        </div>
+        <div class="lined"></div>
       </section>
 
-      <section class="day day--wed">
-        <div class="day__head"><span>WEDNESDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
+      <section class="cell day tue">
+        <div class="cell__head">
+          <div class="cell__title">TUESDAY</div>
+          <label class="mini-check">
+            <input type="checkbox" />
+            <span></span>
+          </label>
+        </div>
+        <div class="lined"></div>
       </section>
 
-      <section class="day day--thu">
-        <div class="day__head"><span>THURSDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
+      <section class="cell day wed">
+        <div class="cell__head">
+          <div class="cell__title">WEDNESDAY</div>
+          <label class="mini-check">
+            <input type="checkbox" />
+            <span></span>
+          </label>
+        </div>
+        <div class="lined"></div>
       </section>
 
-      <section class="day day--fri">
-        <div class="day__head"><span>FRIDAY</span><input type="checkbox" /></div>
-        <textarea class="day__area"></textarea>
+      <!-- DAYS BOTTOM ROW -->
+      <section class="cell day thu">
+        <div class="cell__head">
+          <div class="cell__title">THURSDAY</div>
+          <label class="mini-check">
+            <input type="checkbox" />
+            <span></span>
+          </label>
+        </div>
+        <div class="lined"></div>
       </section>
 
-      <!-- Saturday + Sunday (неділя під суботою як у шаблоні) -->
-      <section class="weekend">
-        <section class="day day--sat">
-          <div class="day__head"><span>SATURDAY</span><input type="checkbox" /></div>
-          <textarea class="day__area"></textarea>
-        </section>
+      <section class="cell day fri">
+        <div class="cell__head">
+          <div class="cell__title">FRIDAY</div>
+          <label class="mini-check">
+            <input type="checkbox" />
+            <span></span>
+          </label>
+        </div>
+        <div class="lined"></div>
+      </section>
 
-        <section class="day day--sun">
-          <div class="day__head"><span>SUNDAY</span><input type="checkbox" /></div>
-          <textarea class="day__area"></textarea>
-        </section>
+      <!-- WEEKEND (one column split into 2) -->
+      <section class="cell weekend">
+        <div class="weekend__half">
+          <div class="cell__head">
+            <div class="cell__title">SATURDAY</div>
+            <label class="mini-check">
+              <input type="checkbox" />
+              <span></span>
+            </label>
+          </div>
+          <div class="lined"></div>
+        </div>
+
+        <div class="weekend__half">
+          <div class="cell__head">
+            <div class="cell__title">SUNDAY</div>
+            <label class="mini-check">
+              <input type="checkbox" />
+              <span></span>
+            </label>
+          </div>
+          <div class="lined"></div>
+        </div>
       </section>
 
     </section>

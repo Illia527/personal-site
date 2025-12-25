@@ -2,47 +2,35 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Лабораторна робота №3 — Flexbox YouTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторна №3 — YouTube (Flexbox)</title>
   <link rel="stylesheet" href="lab3.css" />
 </head>
 <body>
 
   <!-- TOP BAR -->
   <header class="topbar">
-    <div class="topbar__left">
-      <button class="icon-btn" type="button" aria-label="Меню">
-        <span class="icon icon--burger"></span>
-      </button>
-
-      <div class="brand" aria-label="YouTube Premium">
-        <span class="brand__play"></span>
-        <span class="brand__text">Premium</span>
-        <span class="brand__ua">UA</span>
+    <div class="topbar-left">
+      <button class="icon-btn" aria-label="Меню">☰</button>
+      <div class="brand">
+        <span class="yt">YouTube</span>
+        <span class="premium">Premium</span>
+        <span class="ua">UA</span>
       </div>
     </div>
 
-    <div class="topbar__center">
+    <div class="topbar-center">
       <div class="search">
-        <input class="search__input" type="text" placeholder="Пошук" />
-        <button class="icon-btn search__btn" type="button" aria-label="Пошук">
-          <span class="icon icon--search"></span>
-        </button>
+        <input type="text" placeholder="Пошук" />
+        <button class="icon-btn" aria-label="Пошук">🔍</button>
+        <button class="icon-btn mic" aria-label="Голосовий пошук">🎤</button>
       </div>
-
-      <button class="icon-btn" type="button" aria-label="Голосовий пошук">
-        <span class="icon icon--mic"></span>
-      </button>
     </div>
 
-    <div class="topbar__right">
-      <button class="icon-btn" type="button" aria-label="Створити">
-        <span class="icon icon--create"></span>
-      </button>
-      <button class="icon-btn" type="button" aria-label="Сповіщення">
-        <span class="icon icon--bell"></span>
-      </button>
-      <div class="avatar avatar--me" title="Профіль">І</div>
+    <div class="topbar-right">
+      <button class="icon-btn" aria-label="Створити">⊞</button>
+      <button class="icon-btn" aria-label="Сповіщення">🔔</button>
+      <div class="avatar">І</div>
     </div>
   </header>
 
@@ -51,226 +39,185 @@
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-      <nav class="sidebar__section">
-        <a class="side-link side-link--active" href="#">
-          <span class="side-ico">🏠</span>
-          <span class="side-text">Головна</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">🎬</span>
-          <span class="side-text">YouTube Shorts</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">📺</span>
-          <span class="side-text">Підписки</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">🎵</span>
-          <span class="side-text">YouTube Music</span>
-        </a>
-      </nav>
-
-      <div class="sidebar__divider"></div>
-
-      <div class="sidebar__section">
-        <div class="side-title">Ви <span class="chev">›</span></div>
-
-        <a class="side-link" href="#">
-          <span class="side-ico">👤</span>
-          <span class="side-text">Ваш канал</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">🕘</span>
-          <span class="side-text">Історія</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">🎞️</span>
-          <span class="side-text">Ваші відео</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">⏱️</span>
-          <span class="side-text">Переглянути пізніше</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">⬇️</span>
-          <span class="side-text">Завантаження</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="side-ico">⌄</span>
-          <span class="side-text">Показати більше</span>
-        </a>
+      <div class="side-block">
+        <a class="side-item active" href="#"><span class="i">🏠</span>Головна</a>
+        <a class="side-item" href="#"><span class="i">🎬</span>YouTube Shorts</a>
+        <a class="side-item" href="#"><span class="i">📺</span>Підписки</a>
+        <a class="side-item" href="#"><span class="i">🎵</span>YouTube Music</a>
       </div>
 
-      <div class="sidebar__divider"></div>
+      <div class="side-block">
+        <div class="side-title">Ви</div>
+        <a class="side-item" href="#"><span class="i">👤</span>Ваш канал</a>
+        <a class="side-item" href="#"><span class="i">🕘</span>Історія</a>
+        <a class="side-item" href="#"><span class="i">▶️</span>Ваші відео</a>
+        <a class="side-item" href="#"><span class="i">⏳</span>Переглянути пізніше</a>
+        <a class="side-item" href="#"><span class="i">⬇️</span>Завантаження</a>
+        <a class="side-item muted" href="#"><span class="i">⋯</span>Показати більше</a>
+      </div>
 
-      <div class="sidebar__section">
+      <div class="side-block">
         <div class="side-title">Підписки</div>
 
-        <a class="side-link" href="#">
-          <span class="sub-ava" style="background:#3b82f6;">W</span>
-          <span class="side-text">WAS: Популярн...</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="sub-ava" style="background:#a855f7;">D</span>
-          <span class="side-text">TheDRZ</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="sub-ava" style="background:#22c55e;">R</span>
-          <span class="side-text">ROZETKA</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="sub-ava" style="background:#f97316;">A</span>
-          <span class="side-text">Алексей Макар...</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="sub-ava" style="background:#ef4444;">G</span>
-          <span class="side-text">ROZETKA GAME...</span>
-        </a>
-        <a class="side-link" href="#">
-          <span class="sub-ava" style="background:#14b8a6;">Х</span>
-          <span class="side-text">Хащі</span>
-        </a>
+        <a class="sub-item" href="#"><span class="dot blue"></span>WAS: Популярн…</a>
+        <a class="sub-item" href="#"><span class="dot green"></span>TheDRZ</a>
+        <a class="sub-item" href="#"><span class="dot orange"></span>ROZETKA</a>
+        <a class="sub-item" href="#"><span class="dot red"></span>ROZETKA GAME…</a>
+        <a class="sub-item" href="#"><span class="dot gray"></span>Хащі</a>
 
-        <a class="side-link side-link--muted" href="#">
-          <span class="side-ico">⌄</span>
-          <span class="side-text">Показати ще 24</span>
-        </a>
+        <a class="side-item muted" href="#"><span class="i">▼</span>Показати ще</a>
+        <div class="side-footer">24</div>
       </div>
     </aside>
 
-    <!-- CONTENT -->
-    <main class="content">
+    <!-- FEED -->
+    <main class="feed">
 
-      <!-- CHIPS ROW -->
+      <!-- CHIPS -->
       <div class="chips">
-        <a class="chip chip--active" href="#">Усі</a>
-        <a class="chip" href="#">Ігри</a>
-        <a class="chip" href="#">Музика</a>
-        <a class="chip" href="#">Пряма трансляція</a>
-        <a class="chip" href="#">Новини</a>
-        <a class="chip" href="#">Пригодницький бойовик</a>
-        <a class="chip" href="#">Образотворчі мистецтва</a>
-        <a class="chip" href="#">Мультфільми</a>
-        <a class="chip" href="#">Нещодавні завантаження</a>
-        <a class="chip" href="#">Ви дивилися</a>
-
-        <button class="chip-arrow" type="button" aria-label="Далі">›</button>
+        <button class="chip active">Усі</button>
+        <button class="chip">Ігри</button>
+        <button class="chip">Музика</button>
+        <button class="chip">Пряма трансляція</button>
+        <button class="chip">Новини</button>
+        <button class="chip">Пригодницький бойовик</button>
+        <button class="chip">Образотворчі мистецтва</button>
+        <button class="chip">Мультфільми</button>
+        <button class="chip">Нещодавні завантаження</button>
+        <button class="chip">Ви дивилися</button>
+        <button class="chip arrow">›</button>
       </div>
 
-      <!-- VIDEO GRID -->
-      <section class="feed">
+      <!-- VIDEOS GRID -->
+      <section class="grid">
 
         <article class="card">
-          <div class="thumb thumb--1"><span class="duration">12:30</span></div>
+          <div class="thumb">
+            <span class="duration">12:30</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#22c55e;"></div>
-            <div class="meta-text">
-              <h3 class="title">Як збільшився борг України (пояснення простими словами)</h3>
-              <div class="sub">Економічна правда</div>
-              <div class="sub">78 тис. переглядів • 1 місяць тому</div>
+            <div class="ch-avatar">E</div>
+            <div class="text">
+              <div class="v-title">Як збільшився борг України (пояснення простими словами)</div>
+              <div class="v-sub">Економічна правда</div>
+              <div class="v-sub">78 тис. переглядів • 1 місяць тому</div>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb thumb--2"><span class="duration">32:08</span></div>
+          <div class="thumb">
+            <span class="duration">32:08</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#60a5fa;"></div>
-            <div class="meta-text">
-              <h3 class="title">Що бісить журналістку: реальні кейси</h3>
-              <div class="sub">LUKI</div>
-              <div class="sub">70 тис. переглядів • 4 місяці тому</div>
+            <div class="ch-avatar">L</div>
+            <div class="text">
+              <div class="v-title">Що бісить журналістку: реальні кейси</div>
+              <div class="v-sub">LUKI</div>
+              <div class="v-sub">70 тис. переглядів • 4 місяці тому</div>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb thumb--3"><span class="duration">26:47</span></div>
+          <div class="thumb">
+            <span class="duration">4:46</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#f97316;"></div>
-            <div class="meta-text">
-              <h3 class="title">Огляд подій тижня: коротко та по суті</h3>
-              <div class="sub">RTVI (приклад)</div>
-              <div class="sub">276 тис. переглядів • 11 місяців тому</div>
+            <div class="ch-avatar">R</div>
+            <div class="text">
+              <div class="v-title">Огляд подій тижня: коротко та по суті</div>
+              <div class="v-sub">RTVI (приклад)</div>
+              <div class="v-sub">276 тис. переглядів • 11 місяців тому</div>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb thumb--4"><span class="duration">4:46</span></div>
+          <div class="thumb">
+            <span class="duration">23:59</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#a855f7;"></div>
-            <div class="meta-text">
-              <h3 class="title">Як навести порядок у справах за 10 хвилин</h3>
-              <div class="sub">How to ADHD (приклад)</div>
-              <div class="sub">1,2 млн переглядів • 7 років тому</div>
+            <div class="ch-avatar">H</div>
+            <div class="text">
+              <div class="v-title">Як навести порядок у справах за 10 хвилин</div>
+              <div class="v-sub">How to ADHD (приклад)</div>
+              <div class="v-sub">1,2 млн переглядів • 7 років тому</div>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb thumb--5"><span class="duration">23:59</span></div>
+          <div class="thumb">
+            <span class="duration">30:18</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#ef4444;"></div>
-            <div class="meta-text">
-              <h3 class="title">Відео-розбір: що видно на записі</h3>
-              <div class="sub">BINUS INFO</div>
-              <div class="sub">90 тис. переглядів • 1 день тому</div>
+            <div class="ch-avatar">B</div>
+            <div class="text">
+              <div class="v-title">Відео-розбір: що видно на записі</div>
+              <div class="v-sub">BINUS INFO</div>
+              <div class="v-sub">90 тис. переглядів • 1 день тому</div>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb thumb--6"><span class="duration">30:18</span></div>
+          <div class="thumb">
+            <span class="duration">2:03</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#14b8a6;"></div>
-            <div class="meta-text">
-              <h3 class="title">Neo-Brutalism: тренд у дизайні (приклад)</h3>
-              <div class="sub">Halo Lab</div>
-              <div class="sub">242 перегляди • 1 день тому</div>
+            <div class="ch-avatar">H</div>
+            <div class="text">
+              <div class="v-title">Neo-Brutalism: тренд у дизайні (приклад)</div>
+              <div class="v-sub">Halo Lab</div>
+              <div class="v-sub">242 тис. переглядів • 1 день тому</div>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb thumb--7"><span class="duration">2:03</span></div>
+          <div class="thumb">
+            <span class="duration">20:19</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#3b82f6;"></div>
-            <div class="meta-text">
-              <h3 class="title">Пресконференція: головні заяви (приклад)</h3>
-              <div class="sub">Les Podervianskyi</div>
-              <div class="sub">434 тис. переглядів • 5 років тому</div>
+            <div class="ch-avatar">L</div>
+            <div class="text">
+              <div class="v-title">Пресконференція: головні заяви (приклад)</div>
+              <div class="v-sub">Les Podervianskyi</div>
+              <div class="v-sub">434 тис. переглядів • 5 років тому</div>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb thumb--8"><span class="duration">20:19</span></div>
+          <div class="thumb">
+            <span class="duration">1:18</span>
+          </div>
           <div class="meta">
-            <div class="chan-ava" style="background:#f59e0b;"></div>
-            <div class="meta-text">
-              <h3 class="title">Секрети малювання портретів: міні-урок</h3>
-              <div class="sub">Pencil Tutorial</div>
-              <div class="sub">1,3 млн переглядів • 3 місяці тому</div>
+            <div class="ch-avatar">P</div>
+            <div class="text">
+              <div class="v-title">Секрети малювання портретів: міні-урок</div>
+              <div class="v-sub">Pencil Tutorial</div>
+              <div class="v-sub">1,3 млн переглядів • 3 місяці тому</div>
             </div>
           </div>
         </article>
 
       </section>
 
-      <!-- SHORTS (як у шаблоні нижче видно початок) -->
+      <!-- SHORTS -->
       <section class="shorts">
-        <div class="shorts__head">
-          <span class="shorts__badge"></span>
-          <span class="shorts__title">YouTube Shorts</span>
+        <div class="shorts-head">
+          <div class="shorts-title">YouTube Shorts</div>
+          <button class="icon-btn" aria-label="Закрити">✕</button>
         </div>
 
-        <div class="shorts__row">
-          <div class="short"><div class="short__thumb"></div></div>
-          <div class="short"><div class="short__thumb"></div></div>
-          <div class="short"><div class="short__thumb"></div></div>
-          <div class="short"><div class="short__thumb"></div></div>
-          <div class="short"><div class="short__thumb"></div></div>
+        <div class="shorts-row">
+          <div class="short-card"></div>
+          <div class="short-card"></div>
+          <div class="short-card"></div>
+          <div class="short-card"></div>
+          <div class="short-card"></div>
         </div>
       </section>
 

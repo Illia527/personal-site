@@ -98,18 +98,9 @@ body{
 .weekend{ grid-area:weekend; }
 
 .day, .weekend{
+  border-left:1px solid var(--border);
   border-bottom:1px solid var(--border);
 }
-
-.day{
-  border-left:1px solid var(--border);
-}
-
-.day--mon,
-.day--thu{
-  border-left:none; /* перша колонка днів */
-}
-
 
 .day{
   padding:14px 14px 10px 14px;
@@ -208,15 +199,17 @@ body{
   }
 
   .planner__grid{
-  display:grid;
-  grid-template-columns: 280px repeat(3, 1fr);
-  grid-template-rows: 1.05fr 0.95fr; /* ⬅ різна висота рядків */
-  grid-template-areas:
-    "todo mon tue wed"
-    "todo thu fri weekend";
-  min-height:650px;
-}
-
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "todo"
+      "mon"
+      "tue"
+      "wed"
+      "thu"
+      "fri"
+      "weekend";
+  }
 
   .todo{ border-right:none; border-bottom:1px solid var(--border); }
   .day, .weekend{ border-left:none; }

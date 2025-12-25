@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лабораторна №1 — Основи HTML</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Головна</a>
+  <a href="about.html">Про мене</a>
+  <a href="practices.html">Практичні роботи</a>
+  <a href="labs.html">Лабораторні заняття</a>
+</nav>
+
+<h1>Лабораторне заняття №1. Основи HTML</h1>
+
+<p>
+  <a href="labs.html">← Повернутися до списку лабораторних</a>
+</p>
+
+<h2>Форма реєстрації</h2>
+
+<!-- ВАЖЛИВО: встав сюди свій URL з https://webhook.site/ -->
+<form action="https://webhook.site/PASTE-YOUR-UNIQUE-URL-HERE" method="POST">
+  <p>
+    <label for="firstName"><strong>Ім'я *</strong></label><br>
+    <input id="firstName" name="first_name" type="text" required>
+  </p>
+
+  <p>
+    <label for="lastName"><strong>Прізвище *</strong></label><br>
+    <input id="lastName" name="last_name" type="text" required>
+  </p>
+
+  <p>
+    <label for="email"><strong>Email *</strong></label><br>
+    <input id="email" name="email" type="email" required>
+  </p>
+
+  <p>
+    <label for="password"><strong>Пароль *</strong></label><br>
+    <input id="password" name="password" type="password" required minlength="6">
+  </p>
+
+  <p>
+    <label for="password2"><strong>Підтвердження паролю *</strong></label><br>
+    <input id="password2" name="password_confirm" type="password" required minlength="6">
+  </p>
+
+  <!-- Додаткові поля (за вибором) -->
+  <p>
+    <label for="birthdate">Дата народження</label><br>
+    <input id="birthdate" name="birthdate" type="date">
+  </p>
+
+  <p>
+    <label for="gender">Стать</label><br>
+    <select id="gender" name="gender">
+      <option value="">— Оберіть —</option>
+      <option value="male">Чоловіча</option>
+      <option value="female">Жіноча</option>
+      <option value="other">Інше</option>
+    </select>
+  </p>
+
+  <p>
+    <input type="submit" value="Зареєструватися">
+  </p>
+</form>
+
+<footer>
+  <hr>
+  <p>
+    © 2022–2026<br>
+    Студент: Ілля Трондюк<br>
+    Група: КІД-42<br>
+    Спеціальність: Комп’ютерна інженерія
+  </p>
+  <p>
+    Email: <a href="mailto:illia.trondiyk@gmail.com">illia.trondiyk@gmail.com</a><br>
+    GitHub: <a href="https://github.com/illia527" target="_blank">https://github.com/illia527</a>
+  </p>
+</footer>
+
+</body>
+</html>

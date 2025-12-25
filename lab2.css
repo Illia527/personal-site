@@ -1,0 +1,83 @@
+/* ===== Lab 2: CSS selectors tasks ===== */
+
+/* 1) Перший <li> — жирний */
+li:first-child{
+  font-weight: 700;
+}
+
+/* 2) <a>, які є останніми дочірніми елементами свого батька — червоні */
+a:last-child{
+  color: red;
+}
+
+/* 3) input disabled — сірий фон */
+input:disabled{
+  background: #d1d5db;
+}
+
+/* 4) <p> прямі діти <div> — напівжирні */
+div > p{
+  font-weight: 600;
+}
+
+/* 5) href починається з https — зелені */
+[href^="https"]{
+  color: green;
+}
+
+/* 6) input[type="text"] — синя рамка */
+input[type="text"]{
+  border: 1px solid blue;
+}
+
+/* 7) перший або останній <li> — 24px */
+li:first-child,
+li:last-child{
+  font-size: 24px;
+}
+
+/* 8) <p> нащадки <div> — 16px */
+div p{
+  font-size: 16px;
+}
+
+/* 9) input checked — світло-блакитний */
+input:checked{
+  background: lightblue;
+  accent-color: lightblue;
+}
+
+/* 10) <a> прямі діти <li> — підкреслити */
+li > a{
+  text-decoration: underline;
+}
+
+/* 11) парні <li> — жирні */
+li:nth-child(even){
+  font-weight: 700;
+}
+
+/* 12) text input НЕ disabled — сірий фон */
+input[type="text"]:not(:disabled){
+  background: #e5e7eb;
+}
+
+/* 13) <p> перші дочірні — 24px */
+p:first-child{
+  font-size: 24px;
+}
+
+/* 14) <li> після .special — перекреслити */
+.special + li{
+  text-decoration: line-through;
+}
+
+/* 15) перша літера <p> — 36px */
+p::first-letter{
+  font-size: 36px;
+}
+
+/* 16) ::after для <a> */
+a::after{
+  content: " ↗";
+}
